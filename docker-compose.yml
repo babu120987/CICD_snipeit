@@ -1,37 +1,37 @@
-# Compose file for production.
-
-volumes:
-  db_data:
-  storage:
+version: "3.8"
 
 services:
-  app:
-    image: snipe/snipe-it:${APP_VERSION:-latest}
-    restart: unless-stopped
-    volumes:
-      - storage:/var/lib/snipeit
-    ports:
-      - "${APP_PORT:-8000}:80"
-    depends_on:
-      db:
-        condition: service_healthy
-        restart: true
-    env_file:
-      - .env
-
-  db:
-    image: mariadb:11.4.7
-    restart: unless-stopped
-    volumes:
-      - db_data:/var/lib/mysql
+  mysql:
+    image: mysql:5.7
+    container_name: snipeit-mysql
     environment:
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    healthcheck:
-      # https://mariadb.com/kb/en/using-healthcheck-sh/#compose-file-example
-      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
-      interval: 5s
-      timeout: 1s
-      retries: 5
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: snipeit
+      MYSQL_USER: snipeit
+      MYSQL_PASSWORD: snipeit
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: always
+
+  redis:
+    image: redis:alpine
+    container_name: snipeit-redis
+    restart: always
+
+  app:
+    build: .
+    container_name: snipeit-app
+    ports:
+      - "80880:80"
+    depends_on:
+      - mysql
+      - redis
+    environment:
+      DB_HOST: mysql
+      DB_DATABASE: snipeit
+      DB_USERNAME: snipeit
+      DB_PASSWORD: snipeit
+    restart: always
+
+volumes:
+  mysql_data:
