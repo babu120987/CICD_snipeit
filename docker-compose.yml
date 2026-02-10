@@ -1,27 +1,14 @@
 services:
-  mysql:
-    image: mysql:5.7
-    container_name: snipeit-mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: snipeit
-      MYSQL_DATABASE: snipeit
-      MYSQL_USER: snipeit
-      MYSQL_PASSWORD: snipeit
-    volumes:
-      - mysql_data:/var/lib/mysql
-
-  redis:
-    image: redis:alpine
-    container_name: snipeit-redis
-
-  app:
+  snipeit-app:
     image: snipeit-app:latest
     container_name: snipeit-app
     ports:
       - "8088:80"
-    depends_on:
-      - mysql
-      - redis
-
-volumes:
-  mysql_data:
+    environment:
+      APP_ENV: production
+      APP_DEBUG: false
+      APP_KEY: base64:sR9ymCr+5VWY0cwJjF55QAC2vmFjf/MuH0xXc5RtfWc=
+      DB_HOST: mysql
+      DB_DATABASE: snipeit
+      DB_USERNAME: snipeit
+      DB_PASSWORD: password
