@@ -14,12 +14,13 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    docker.build("${DOCKER_IMAGE}")
-                }
-            }
+stage('Build Docker Image') {
+    steps {
+        sh '''
+        docker build -t snipeit-app:latest .
+        '''
+    }
+}
         }
 
         stage('Maven Test') {
