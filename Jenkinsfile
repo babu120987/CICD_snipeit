@@ -1,57 +1,50 @@
 pipeline {
     agent any
 
-    environment {
-        DOCKER_IMAGE = "snipeit_app:latest"
-        CONTAINER_NAME = "snipeit_container"
-        GIT_REPO = "https://github.com/babu120987/CICD_snipeit.git"
-    }
-
     stages {
+
         stage('Checkout') {
             steps {
-                git url: "${GIT_REPO}", branch: 'main'
+                git branch: 'main',
+                    url: 'https://github.com/babu120987/CICD_snipeit.git'
             }
         }
 
-stage('Build Docker Image') {
-    steps {
-        sh '''
-        docker build -t snipeit-app:latest .
-        '''
-    }
-}
-        }
-
-        stage('Maven Test') {
+        stage('Build Docker Image') {
             steps {
-                sh 'mvn clean test'
+                sh '''
+                docker build -t snipeit-app:latest .
+                '''
             }
         }
 
-        stage('Run Container') {
+        stage('Test Image') {
             steps {
-                script {
-                    // Stop and remove existing container if running
-                    sh """
-                    docker stop ${CONTAINER_NAME} || true
-                    docker rm ${CONTAINER_NAME} || true
-                    """
+                sh '''
+                docker run --rm snipeit-app:latest php -v
+                '''
+            }
+        }
 
-                    // Run container
-                    sh """
-                    docker run -d --name ${CONTAINER_NAME} -p 8080:80 ${DOCKER_IMAGE}
-                    """
-                }
+        stage('Deploy Containers') {
+            steps {
+                sh '''
+                docker rm -f snipeit-app snipeit-mysql snipeit-redis || true
+                docker-compose up -d
+                '''
             }
         }
     }
 
     post {
         always {
-            echo 'Cleaning up workspace...'
             cleanWs()
+        }
+        success {
+            echo "✅ Snipe-IT deployed successfully on port 8088"
+        }
+        failure {
+            echo "❌ Pipeline failed — check logs"
         }
     }
 }
-
