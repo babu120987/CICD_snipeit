@@ -2,59 +2,55 @@ pipeline {
     agent any
 
     environment {
-        APP_NAME = "snipeit"
-        IMAGE_NAME = "snipeit-app"
+        DOCKER_IMAGE = "snipeit_app:latest"
+        CONTAINER_NAME = "snipeit_container"
         GIT_REPO = "https://github.com/babu120987/CICD_snipeit.git"
     }
 
     stages {
-
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
-                git branch: 'main', url: "${GIT_REPO}"
+                git url: "${GIT_REPO}", branch: 'main'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh '''
-                docker build -t $IMAGE_NAME:latest .
-                '''
+                script {
+                    docker.build("${DOCKER_IMAGE}")
+                }
             }
         }
 
-        stage('Test Image') {
+        stage('Maven Test') {
             steps {
-                sh '''
-                docker run --rm $IMAGE_NAME:latest php -v
-                '''
+                sh 'mvn clean test'
             }
         }
 
-        stage('Deploy Containers') {
+        stage('Run Container') {
             steps {
-                sh '''
-                docker-compose down
-                docker-compose up -d
-                '''
-            }
-        }
+                script {
+                    // Stop and remove existing container if running
+                    sh """
+                    docker stop ${CONTAINER_NAME} || true
+                    docker rm ${CONTAINER_NAME} || true
+                    """
 
-        stage('Verify Running Containers') {
-            steps {
-                sh '''
-                docker ps
-                '''
+                    // Run container
+                    sh """
+                    docker run -d --name ${CONTAINER_NAME} -p 8080:80 ${DOCKER_IMAGE}
+                    """
+                }
             }
         }
     }
 
     post {
-        success {
-            echo "CI/CD Pipeline completed successfully 🚀"
-        }
-        failure {
-            echo "Pipeline failed ❌ — Fix your config"
+        always {
+            echo 'Cleaning up workspace...'
+            cleanWs()
         }
     }
 }
+

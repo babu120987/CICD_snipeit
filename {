@@ -1,0 +1,365 @@
+Script started on 2026-02-10 10:33:47+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="148" LINES="35"]
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ nano nginx.conf[K[K[K[K[K[K[K[K[K[K[7mdocker-compose.yml[27mdocker-compose.yml
+[?2004l[?2004h[?1049h[22;0;0t[1;35r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[33;68H(B[0;7m[ Reading... ](B[m[33;66H(B[0;7m[ Read 37 lines ](B[m[H(B[0;7m  GNU nano 6.2                                                     docker-compose.yml                                                               [1;147H(B[m[34d(B[0;7m^G(B[m Help[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[34;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35d(B[0;7m^X(B[m Exit[35;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[35;113H(B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[2d[92mversion[39m: [95m"3.8"[4d[92mservices[39m:[5;3H[92mmysql[39m:[6;5H[92mimage[39m: (B[mmysql:5.7[7;5H[92mcontainer_name[39m: (B[msnipeit-mysql[8;5H[92menvironment[39m:[9;7H[92mMYSQL_ROOT_PASSWORD[39m: (B[mroot[10;7H[92mMYSQL_DATABASE[39m: (B[msnipeit[11;7H[92mMYSQL_USER[39m: (B[msnipeit[12;7H[92mMYSQL_PASSWORD[39m: (B[msnipeit[13;5H[92mvolumes[39m:[14;6H(B[0;1m[33m[1K - [39m(B[mmysql_data:/var/lib/mysql[15;5H[92mrestart[39m: (B[malways[17;3H[92mredis[39m:[18;5H[92mimage[39m: (B[mredis:alpine[19;5H[92mcontainer_name[39m: (B[msnipeit-redis[20;5H[92mrestart[39m: (B[malways[22;3H[92mapp[39m:[23d[92mbuild[39m: (B[m.[24;5H[92mcontainer_name[39m: (B[msnipeit-app[25;5H[92mports[39m:[26;6H(B[0;1m[33m[1K - (B[0m[95m"8880:80"[27;5H[92mdepends_on[39m:[28;6H(B[0;1m[33m[1K - [39m(B[mmysql[29;6H(B[0;1m[33m[1K - [39m(B[mredis[30;5H[92menvironment[39m:[31;7H[92mDB_HOST[39m: (B[mmysql[32;7H[92mDB_DATABASE[39m: (B[msnipeit[2d[?12l[?25h[?25l[1;87H(B[0;7m*[147G(B[m[2;33r[33;1H
+[1;35r[32;7H[92mDB_USERNAME[39m: (B[msnipeit[K[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;7H[92mDB_PASSWORD[39m: (B[msnipeit[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;5H[92mrestart[39m: (B[malways[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;1H[92mvolumes[39m:[2d(B[m[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;3H[92mmysql_data[39m:[2d(B[m[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[K[?12l[?25h[?25l[33;65H(B[0;7m[ Nothing was cut ](B[m[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[?12l[?25hk[?25l[?12l[?25hk[?25l[?12l[?25h [?25l[?12l[?25h[K[?25l[?12l[?25h[?25l[33d[K[2d  [92mdb[39m:[3d[92mimage[39m: (B[mmysql:8.0[4;5H[92mcontainer_name[39m: (B[msnipeit_db[5;5H[92menvironment[39m:[6;7H[92mMYSQL_ROOT_PASSWORD[39m: (B[mrootpass[7;7H[92mMYSQL_DATABASE[39m: (B[msnipeit[8;7H[92mMYSQL_USER[39m: (B[msnipeituser[9;7H[92mMYSQL_PASSWORD[39m: (B[msnipeitpass[10;5H[92mports[39m:[11;6H(B[0;1m[33m[1K - (B[0m[95m"3306:3306"[12;5H[92mvolumes[39m:[13;6H(B[0;1m[33m[1K - [39m(B[mdb_data:/var/lib/mysql[15d[92mvolumes[39m:[16;3H[92mdb_data[39m:[17d(B[m[?12l[?25h[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h7[2;33r8M[1;35r[2;1H[?25l[?12l[?25h7[2;33r8M[1;35r[2;6H(B[0;1m[33m[1K - [39m(B[mdb[?25l[?12l[?25h7[2;33r8M[1;35r[2;5H[92mdepends_on[39m:(B[m[?25l[?12l[?25h7[2;33r8M[1;35r[2;7H[92mDB_PASSWORD[39m: (B[msnipeitpass[?25l[?12l[?25h7[2;33r8M[1;35r[2;7H[92mDB_USERNAME[39m: (B[msnipeituser[?25l[?12l[?25h7[2;33r8M[1;35r[2;7H[92mDB_DATABASE[39m: (B[msnipeit[?25l[?12l[?25h7[2;33r8M[1;35r[2;7H[92mDB_HOST[39m: (B[mdb[?25l[?12l[?25h7[2;33r8M[1;35r[2;7H[92mAPP_KEY[39m: (B[mbase64:SomeRandomKeyHere==[?25l[?12l[?25h7[2;33r8M[1;35r[2;5H[92menvironment[39m:(B[m[?25l[?12l[?25h7[2;33r8M[1;35r[2;6H(B[0;1m[33m[1K - (B[0m[95m"8080:80"[39m(B[m[?25l[?12l[?25h7[2;33r8M[1;35r[2;5H[92mports[39m:(B[m[?25l[?12l[?25h7[2;33r8M[1;35r[2;5H[92mcontainer_name[39m: (B[msnipeit_container[?25l[?12l[?25h7[2;33r8M[1;35r[2;5H[92mbuild[39m: (B[m.[?25l[?12l[?25h7[2;33r8M[1;35r[2;3H[92msnipeit[39m:(B[m[?25l[?12l[?25h7[2;33r8M[1;35r[2;1H[92mservices[39m:(B[m[?25l[?12l[?25h7[2;33r8M[1;35r[2;1H[?25l[?12l[?25h7[2;32r8M[1;35r[2;1H[92mversion[39m: [95m'3.8'[39m(B[m[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[?12l[?25h[5d[?25l[?12l[?25h[6d[?25l[?12l[?25h[7d[?25l[?12l[?25h[8d[?25l[?12l[?25h[9d[?25l[?12l[?25h[10d[?25l[?12l[?25h[11d[?25l[?12l[?25h[12d[?25l[?12l[?25h[13d[?25l[?12l[?25h[14d[?25l[?12l[?25h[15d[?25l[?12l[?25h[16d[?25l[?12l[?25h[17d[?25l[?12l[?25h[18d[?25l[?12l[?25h[19d[?25l[?12l[?25h[20d[?25l[?12l[?25h[21d[?25l[?12l[?25h[22d[?25l[?12l[?25h[23d[?25l[?12l[?25h[24d[?25l[?12l[?25h[25d[?25l[?12l[?25h[26d[?25l[?12l[?25h[27d[?25l[?12l[?25h[A[?25l[?12l[?25h[27d[?25l[?12l[?25h[28d[?25l[?12l[?25h[29d[?25l[?12l[?25h[30d[?25l[?12l[?25h[31d[?25l[?12l[?25h[32d[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;3H[92mdb_data[39m:(B[m[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;1H[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;1H[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[95m:80"[39m(B[m[K[?25l[?12l[?25h[95m88:80"[39m(B[m[?25l[34;17H[21X[34;38H(B[0;7mM-D(B[m DOS Format   [34;65H          (B[0;7mM-A(B[m Append[20X[34;112H(B[0;7mM-B(B[m Backup File[K[35;2H(B[0;7mC(B[m Cancel[17G[21X[35;38H(B[0;7mM-M(B[m Mac Format     [35;65H          (B[0;7mM-P(B[m Prepend[19X[35;112H(B[0;7m^T(B[m Browse[K[33d(B[0;7mFile Name to Write: docker-compose.yml                                                                                                              [33;39H(B[m[?12l[?25h[?25l[33;67H[1K (B[0;7m[ Writing... ](B[m[K[1;87H(B[0;7m [147G(B[m[33;66H(B[0;7m[ Wrote 33 lines ](B[m[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute      (B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[112G (B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35;2H(B[0;7mX(B[m Exit  [17G(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace      (B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify      (B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[112G (B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[?12l[?25h[6;14H[?25l[33d[J[35d[?12l[?25h[35;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ docker ps -a
+[?2004lCONTAINER ID   IMAGE               COMMAND                  CREATED        STATUS        PORTS                                           NAMES
+5ac0ca22e1b7   electro-web:1       "/docker-entrypoint.…"   17 hours ago   Up 17 hours   0.0.0.0:10000->9999/tcp, [::]:10000->9999/tcp   electro_container
+46db0fa29b29   bhuvanaweb:latest   "/docker-entrypoint.…"   18 hours ago   Up 18 hours   0.0.0.0:9999->80/tcp, [::]:9999->80/tcp         bhuvanaweb_container
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ docker ps -a
+[?2004lCONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS                         PORTS                                           NAMES
+3f7e8ac19418   snipeit_cicd-app    "/startup.sh"            13 minutes ago   Restarting (0) 6 minutes ago                                                   snipeit-app
+b96be2d00a7a   redis:alpine        "docker-entrypoint.s…"   13 minutes ago   Up 13 minutes                  6379/tcp                                        snipeit-redis
+0a8558962471   mysql:5.7           "docker-entrypoint.s…"   13 minutes ago   Up 13 minutes                  3306/tcp, 33060/tcp                             snipeit-mysql
+5ac0ca22e1b7   electro-web:1       "/docker-entrypoint.…"   17 hours ago     Up 17 hours                    0.0.0.0:10000->9999/tcp, [::]:10000->9999/tcp   electro_container
+46db0fa29b29   bhuvanaweb:latest   "/docker-entrypoint.…"   18 hours ago     Up 18 hours                    0.0.0.0:9999->80/tcp, [::]:9999->80/tcp         bhuvanaweb_container
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ docker ps -a
+[?2004lCONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS                          PORTS                                           NAMES
+3f7e8ac19418   snipeit_cicd-app    "/startup.sh"            30 minutes ago   Restarting (0) 29 seconds ago                                                   snipeit-app
+b96be2d00a7a   redis:alpine        "docker-entrypoint.s…"   30 minutes ago   Up 30 minutes                   6379/tcp                                        snipeit-redis
+0a8558962471   mysql:5.7           "docker-entrypoint.s…"   30 minutes ago   Up 30 minutes                   3306/tcp, 33060/tcp                             snipeit-mysql
+5ac0ca22e1b7   electro-web:1       "/docker-entrypoint.…"   17 hours ago     Up 17 hours                     0.0.0.0:10000->9999/tcp, [::]:10000->9999/tcp   electro_container
+46db0fa29b29   bhuvanaweb:latest   "/docker-entrypoint.…"   18 hours ago     Up 18 hours                     0.0.0.0:9999->80/tcp, [::]:9999->80/tcp         bhuvanaweb_container
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mdocker logs snipeit-app --tail=50[27mdocker logs snipeit-app --tail=50
+[?2004lAn example APP_KEY you could use is: 
+base64:H9CO1TpVDGs5Hl1tXAJ29P60F+XA9c0IFRQLO3KNNcE=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:8ttI8DEcr6N+vFwg0sZLdTZtkmcyYbvJJAiwkonMCmM=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:uImFbS6roPUq2O1yGoQ0Y+HENFD/BLu6VQ3T/GsgqBQ=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:wjkUmDGi2uenWMsbLpJ6FUVCabrpIc1iow+/7h69kok=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:L8tiZrFRKSmmAY15hrAXDpMP34iVEPOq1K6n7aEEia0=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:+LT9ZTrtGkHsHSbkcVta4XrwpZx8hWcKJg816QYztJQ=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:qp1zi9o89iWgisaLwAOJpdZ7Nhkr93rdbME0OpW2MBM=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:ABdueUJjX2TgjGn3nu10oWk5uegAQJOudTLenyB9cjE=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:NYEC3uTD1rqoRVHC8aVzWDpiif1qNbUXuwanYMbkLpY=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:c2uRZ6ImDTUb3ngDdq6ZETlkmLmFLbIKWMiCalixjos=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:zZiqbmWdDsK1g4+Vod53R8sHOCVbbjWgpuKLR5Je1xc=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:CRjlomoQ5DgR4LpFbC7zwqrx0SO5WeNmtDgeK5w1ab0=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:02fMpAjf/f40gvyjXzdLeMmePi8kxJoGNdU46abcf3c=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:Tl8ZWCsagGaTnpmu5dUq3Odg9w2JSVMAuYZE+QwBgeE=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:IR8VS5623wMEnAlRj7+hJzfSDCLK9S0+Un/LYLSwqDI=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:h2UkA2jZMl23/E35flOdCyZpkGFK7438KFtE4bG++wE=
+Please re-run this container with an environment variable $APP_KEY
+An example APP_KEY you could use is: 
+base64:tlvoQ0Iaz4GkRcJM2FPdFEs3MTAklP8MKswPxsoxkL8=
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ docker logs snipeit-app --tail=50ps -a[K
+[?2004lCONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS                         PORTS                                           NAMES
+3c40c00b9a60   snipeit_cicd-app    "/startup.sh"            35 seconds ago   Restarting (0) 2 seconds ago                                                   snipeit-app
+728336d77a84   redis:alpine        "docker-entrypoint.s…"   35 seconds ago   Up 33 seconds                  6379/tcp                                        snipeit-redis
+dad2c95e1f25   mysql:5.7           "docker-entrypoint.s…"   35 seconds ago   Up 33 seconds                  3306/tcp, 33060/tcp                             snipeit-mysql
+5ac0ca22e1b7   electro-web:1       "/docker-entrypoint.…"   17 hours ago     Up 17 hours                    0.0.0.0:10000->9999/tcp, [::]:10000->9999/tcp   electro_container
+46db0fa29b29   bhuvanaweb:latest   "/docker-entrypoint.…"   18 hours ago     Up 18 hours                    0.0.0.0:9999->80/tcp, [::]:9999->80/tcp         bhuvanaweb_container
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ ls
+[?2004l CODE_OF_CONDUCT.md      Jenkinsfile   Vagrantfile   [0m[01;34mbootstrap[0m       dev.docker-compose.yml   package.json           [01;34mpublic[0m        [01;34mstorage[0m
+ CONTRIBUTING.md         [01;32mLICENSE[0m       _config.yml   composer.json   [01;34mdocker[0m                   phpmd.xml              [01;34mresources[0m     [01;34mstubs[0m
+ CONTRIBUTORS.md         Procfile      [01;34mansible[0m       composer.lock   docker-compose.yml       phpstan.neon.dist      [01;34mroutes[0m        [01;34mtests[0m
+ Dockerfile              README.md     [01;34mapp[0m           [01;34mconfig[0m          [01;32minstall.sh[0m               phpstan.neon.example   [01;34msample_csvs[0m   upgrade.php
+ Dockerfile.alpine       SECURITY.md   app.json      crowdin.yml     pa11y.js                 phpunit.xml            server.php    webpack.mix.js
+ Dockerfile.fpm-alpine   TESTING.md    artisan       [01;34mdatabase[0m        package-lock.json        psalm.xml              [01;32msnipeit.sh[0m   '{'
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ .envn.enva.envn.envo.env .env
+[?2004l[?2004h[?1049h[22;0;0t[1;35r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[33;69H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 6.2                                                            .env                                                                      [1;147H(B[m[34d(B[0;7m^G(B[m Help[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[34;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35d(B[0;7m^X(B[m Exit[35;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[35;113H(B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[2d[?12l[?25h[?25l[1;80H(B[0;7m*[33d(B[m[K[1;147H[2dAPP_ENV=production[3dAPP_DEBUG=false[4dAPP_URL=http://localhost:8088[6dAPP_KEY=base64:H9CO1TpVDGs5Hl1tXAJ29P60F+XA9c0IFRQLO3KNNcE=[8dDB_CONNECTION=mysql[9dDB_HOST=snipeit-mysql[10dDB_PORT=3306[11dDB_DATABASE=snipeit[12dDB_USERNAME=snipeit[13dDB_PASSWORD=snipeit[15dCACHE_DRIVER=redis[16dSESSION_DRIVER=redis[17dQUEUE_DRIVER=sync[19dREDIS_HOST=snipeit-redis[20dREDIS_PORT=6379[21d[?12l[?25h[?25l[34;17H[21X[34;38H(B[0;7mM-D(B[m DOS Format   [34;65H          (B[0;7mM-A(B[m Append[20X[34;112H(B[0;7mM-B(B[m Backup File[K[35;2H(B[0;7mC(B[m Cancel[17G[21X[35;38H(B[0;7mM-M(B[m Mac Format     [35;65H          (B[0;7mM-P(B[m Prepend[19X[35;112H(B[0;7m^T(B[m Browse[K[33d(B[0;7mFile Name to Write: .env                                                                                                                            [33;25H(B[m[?12l[?25h[?25l[33;67H[1K (B[0;7m[ Writing... ](B[m[K[1;80H(B[0;7m [147G(B[m[33;66H(B[0;7m[ Wrote 19 lines ](B[m[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute      (B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[112G (B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35;2H(B[0;7mX(B[m Exit  [17G(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace      (B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify      (B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[112G (B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[?12l[?25h[21d[?25l[33d[J[35d[?12l[?25h[35;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ nan [Ko d
+database/               dev.docker-compose.yml  docker/                 docker-compose.yml      
+]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ nano d[KDockerfile-c]]]]]]]]]\[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[7mdocker-compose.yml[27mdocker-compose.yml
+[?2004l[?2004h[?1049h[22;0;0t[1;35r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[33;68H(B[0;7m[ Reading... ](B[m[33;66H(B[0;7m[ Read 33 lines ](B[m[H(B[0;7m  GNU nano 6.2                                                     docker-compose.yml                                                               [1;147H(B[m[34d(B[0;7m^G(B[m Help[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[34;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35d(B[0;7m^X(B[m Exit[35;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[35;113H(B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[2d[92mversion[39m: [95m'3.8'[4d[92mservices[39m:[5;3H[92msnipeit[39m:[6;5H[92mbuild[39m: (B[m.[7;5H[92mcontainer_name[39m: (B[msnipeit_container[8;5H[92mports[39m:[9;6H(B[0;1m[33m[1K - (B[0m[95m"8088:80"[10;5H[92menvironment[39m:[11;7H[92mAPP_KEY[39m: (B[mbase64:SomeRandomKeyHere==[12;7H[92mDB_HOST[39m: (B[mdb[13;7H[92mDB_DATABASE[39m: (B[msnipeit[14;7H[92mDB_USERNAME[39m: (B[msnipeituser[15;7H[92mDB_PASSWORD[39m: (B[msnipeitpass[16;5H[92mdepends_on[39m:[17;6H(B[0;1m[33m[1K - [39m(B[mdb[19;3H[92mdb[39m:[20d[92mimage[39m: (B[mmysql:8.0[21;5H[92mcontainer_name[39m: (B[msnipeit_db[22;5H[92menvironment[39m:[23;7H[92mMYSQL_ROOT_PASSWORD[39m: (B[mrootpass[24;7H[92mMYSQL_DATABASE[39m: (B[msnipeit[25;7H[92mMYSQL_USER[39m: (B[msnipeituser[26;7H[92mMYSQL_PASSWORD[39m: (B[msnipeitpass[27;5H[92mports[39m:[28;6H(B[0;1m[33m[1K - (B[0m[95m"3306:3306"[29;5H[92mvolumes[39m:[30;6H(B[0;1m[33m[1K - [39m(B[mdb_data:/var/lib/mysql[32d[92mvolumes[39m:[2d(B[m[?12l[?25h[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[?12l[?25h[5d[?25l[?12l[?25h[6d[?25l[?12l[?25h[7d[?25l[?12l[?25h[8d[?25l[?12l[?25h[9d[?25l[?12l[?25h[10d[?25l[?12l[?25h[11d[?25l[?12l[?25h[12d[?25l[?12l[?25h[13d[?25l[?12l[?25h[14d[?25l[?12l[?25h[15d[?25l[?12l[?25h[16d[?25l[?12l[?25h[17d[?25l[?12l[?25h[18d[?25l[?12l[?25h[19d[?25l[?12l[?25h[20d[?25l[?12l[?25h[21d[?25l[33d[K[?12l[?25h[22d[?25l[?12l[?25h[23d[?25l[?12l[?25h[24d[?25l[?12l[?25h[25d[?25l[?12l[?25h[26d[?25l[?12l[?25h[27d[?25l[?12l[?25h[28d[?25l[?12l[?25h[29d[?25l[?12l[?25h[30d[?25l[?12l[?25h[31d[?25l[?12l[?25h[32d[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;3H[92mdb_data[39m:(B[m[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;1H[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;1H[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h7[2;33r8M[1;35r[2;1H[92mservices[39m:(B[m[?25l[?12l[?25h7[2;33r8M[1;35r[2;1H[?25l[?12l[?25h7[2;32r8M[1;35r[2;1H[92mversion[39m: [95m'3.8'[39m(B[m[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[3d[?25l[1;87H(B[0;7m*[147G(B[m[3;32r[3;1H[5T[1;35r[3;1H[92mservices[39m:[4;3H[92mapp[39m:[5d[92mcontainer_name[39m: (B[msnipeit-app[6;5H[92menv_file[39m:[7;6H(B[0;1m[33m[1K - [39m(B[m.env[8d[?12l[?25h[?25l[34;17H[21X[34;38H(B[0;7mM-D(B[m DOS Format   [34;65H          (B[0;7mM-A(B[m Append[20X[34;112H(B[0;7mM-B(B[m Backup File[K[35;2H(B[0;7mC(B[m Cancel[17G[21X[35;38H(B[0;7mM-M(B[m Mac Format     [35;65H          (B[0;7mM-P(B[m Prepend[19X[35;112H(B[0;7m^T(B[m Browse[K[33d(B[0;7mFile Name to Write: docker-compose.yml                                                                                                              [33;39H(B[m[?12l[?25h[?25l[33;67H[1K (B[0;7m[ Writing... ](B[m[K[1;87H(B[0;7m [147G(B[m[33;66H(B[0;7m[ Wrote 38 lines ](B[m[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute      (B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[112G (B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35;2H(B[0;7mX(B[m Exit  [17G(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace      (B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify      (B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[112G (B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[?12l[?25h[8d[?25l[33d[J[35d[?12l[?25h[35;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mdocker-compose down[27m
+[7mdocker-compose up -d[27m
+[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdocker-compose down
+docker-compose up -d
+[A
+[?2004lyaml: unmarshal errors:
+  line 8: mapping key "services" already defined at line 2
+yaml: unmarshal errors:
+  line 8: mapping key "services" already defined at line 2
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mdocker ps[27mdocker ps
+[?2004lCONTAINER ID   IMAGE               COMMAND                  CREATED         STATUS                         PORTS                                           NAMES
+3c40c00b9a60   snipeit_cicd-app    "/startup.sh"            5 minutes ago   Restarting (0) 9 seconds ago                                                   snipeit-app
+728336d77a84   redis:alpine        "docker-entrypoint.s…"   5 minutes ago   Up 5 minutes                   6379/tcp                                        snipeit-redis
+dad2c95e1f25   mysql:5.7           "docker-entrypoint.s…"   5 minutes ago   Up 5 minutes                   3306/tcp, 33060/tcp                             snipeit-mysql
+5ac0ca22e1b7   electro-web:1       "/docker-entrypoint.…"   17 hours ago    Up 17 hours                    0.0.0.0:10000->9999/tcp, [::]:10000->9999/tcp   electro_container
+46db0fa29b29   bhuvanaweb:latest   "/docker-entrypoint.…"   18 hours ago    Up 18 hours                    0.0.0.0:9999->80/tcp, [::]:9999->80/tcp         bhuvanaweb_container
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ docker ps-compose up -d[1Pdownnano docker-compose.yml
+[?2004l[?2004h[?1049h[22;0;0t[1;35r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[33;68H(B[0;7m[ Reading... ](B[m[33;66H(B[0;7m[ Read 38 lines ](B[m[H(B[0;7m  GNU nano 6.2                                                     docker-compose.yml                                                               [1;147H(B[m[34d(B[0;7m^G(B[m Help[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[34;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35d(B[0;7m^X(B[m Exit[35;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[35;113H(B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[2d[92mversion[39m: [95m'3.8'[3d[92mservices[39m:[4;3H[92mapp[39m:[5d[92mcontainer_name[39m: (B[msnipeit-app[6;5H[92menv_file[39m:[7;6H(B[0;1m[33m[1K - [39m(B[m.env[9d[92mservices[39m:[10;3H[92msnipeit[39m:[11;5H[92mbuild[39m: (B[m.[12;5H[92mcontainer_name[39m: (B[msnipeit_container[13;5H[92mports[39m:[14;6H(B[0;1m[33m[1K - (B[0m[95m"8088:80"[15;5H[92menvironment[39m:[16;7H[92mAPP_KEY[39m: (B[mbase64:SomeRandomKeyHere==[17;7H[92mDB_HOST[39m: (B[mdb[18;7H[92mDB_DATABASE[39m: (B[msnipeit[19;7H[92mDB_USERNAME[39m: (B[msnipeituser[20;7H[92mDB_PASSWORD[39m: (B[msnipeitpass[21;5H[92mdepends_on[39m:[22;6H(B[0;1m[33m[1K - [39m(B[mdb[24;3H[92mdb[39m:[25d[92mimage[39m: (B[mmysql:8.0[26;5H[92mcontainer_name[39m: (B[msnipeit_db[27;5H[92menvironment[39m:[28;7H[92mMYSQL_ROOT_PASSWORD[39m: (B[mrootpass[29;7H[92mMYSQL_DATABASE[39m: (B[msnipeit[30;7H[92mMYSQL_USER[39m: (B[msnipeituser[31;7H[92mMYSQL_PASSWORD[39m: (B[msnipeitpass[32;5H[92mports[39m:[2d(B[m[?12l[?25h[?25l[1;87H(B[0;7m*[147G(B[m[2;33r[33;1H
+[1;35r[32;6H(B[0;1m[33m[1K - (B[0m[95m"3306:3306"[39m(B[m[K[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;5H[92mvolumes[39m:[2d(B[m[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;6H(B[0;1m[33m[1K - [39m(B[mdb_data:/var/lib/mysql[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;1H[92mvolumes[39m:[2d(B[m[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;3H[92mdb_data[39m:[2d(B[m[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[K[?12l[?25h[?25l[?12l[?25h[?25l[33;65H(B[0;7m[ Nothing was cut ](B[m[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33d[K[2;7H[92mMYSQL_ROOT_PASSWORD[39m: (B[mroot[3;7H[92mMYSQL_DATABASE[39m: (B[msnipeit[4;7H[92mMYSQL_USER[39m: (B[msnipeit[5;7H[92mMYSQL_PASSWORD[39m: (B[msnipeit[6;5H[92mvolumes[39m:[7;6H(B[0;1m[33m[1K - [39m(B[mmysql_data:/var/lib/mysql[8;5H[92mrestart[39m: (B[munless-stopped[10;3H[92mredis[39m:[11;5H[92mimage[39m: (B[mredis:alpine[12;5H[92mcontainer_name[39m: (B[msnipeit-redis[13;5H[92mrestart[39m: (B[munless-stopped[15d[92mvolumes[39m:[16;3H[92mmysql_data[39m:[17d(B[m[?12l[?25h[?25l[34;17H[21X[34;38H(B[0;7mM-D(B[m DOS Format   [34;65H          (B[0;7mM-A(B[m Append[20X[34;112H(B[0;7mM-B(B[m Backup File[K[35;2H(B[0;7mC(B[m Cancel[17G[21X[35;38H(B[0;7mM-M(B[m Mac Format     [35;65H          (B[0;7mM-P(B[m Prepend[19X[35;112H(B[0;7m^T(B[m Browse[K[33d(B[0;7mFile Name to Write: docker-compose.yml                                                                                                              [33;39H(B[m[?12l[?25h[?25l[33;67H[1K (B[0;7m[ Writing... ](B[m[K[1;87H(B[0;7m [147G(B[m[33;66H(B[0;7m[ Wrote 34 lines ](B[m[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute      (B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[112G (B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35;2H(B[0;7mX(B[m Exit  [17G(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace      (B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify      (B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[112G (B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[?12l[?25h[17d[?25l[33d[J[35d[?12l[?25h[35;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mls -la .env[27mls -la .env
+[?2004l-rw-r--r-- 1 babu babu 343 Feb 10 11:27 .env
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mnano .env[27mnano .env
+[?2004l[?2004h[?1049h[22;0;0t[1;35r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[33;68H(B[0;7m[ Reading... ](B[m[33;66H(B[0;7m[ Read 19 lines ](B[m[H(B[0;7m  GNU nano 6.2                                                            .env                                                                      [1;147H(B[m[34d(B[0;7m^G(B[m Help[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[34;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35d(B[0;7m^X(B[m Exit[35;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[35;113H(B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[2dAPP_ENV=production[3dAPP_DEBUG=false[4dAPP_URL=http://localhost:8088[6dAPP_KEY=base64:H9CO1TpVDGs5Hl1tXAJ29P60F+XA9c0IFRQLO3KNNcE=[8dDB_CONNECTION=mysql[9dDB_HOST=snipeit-mysql[10dDB_PORT=3306[11dDB_DATABASE=snipeit[12dDB_USERNAME=snipeit[13dDB_PASSWORD=snipeit[15dCACHE_DRIVER=redis[16dSESSION_DRIVER=redis[17dQUEUE_DRIVER=sync[19dREDIS_HOST=snipeit-redis[20dREDIS_PORT=6379[2d[?12l[?25h[?25l[1;80H(B[0;7m*[33d(B[m[K[1;147H7[2;33r8[2d[2T[1;35r[2;1HDB_HOST=snipeit-mysql[3dREDIS_HOST=snipeit-redis[4d[?12l[?25h[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[33d(B[0;7mSave modified buffer?                                                                                                                               [34;1H Y(B[m Yes[K[35d(B[0;7m N(B[m No  [35;18H(B[0;7mC(B[m Cancel[K[33;23H[?12l[?25h[?25l[J[35d[?12l[?25h[35;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mDB_HOST=snipeit-mysql[27m
+[7mREDIS_HOST=snipeit-redis[27m
+[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CDB_HOST=snipeit-mysql
+REDIS_HOST=snipeit-redis
+[A
+[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mdocker-compose down -v[27m
+[7mdocker-compose up -d[27m
+[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdocker-compose down -v
+docker-compose up -d
+[A
+[?2004l[33mWARN[0m[0000] /home/babu/docker/100226/CICD_snipeit/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+[33mWARN[0m[0000] /home/babu/docker/100226/CICD_snipeit/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+[1A[1B[0G[?25l[+] Running 0/1
+ [33m⠋[0m Network cicd_snipeit_default  Creating                                                                                                      [34m0.1s [0m
+[?25h[1A[1A[0G[?25l[+] Running 0/1
+ [33m⠙[0m Network cicd_snipeit_default  Creating                                                                                                      [34m0.2s [0m
+[?25h[1A[1A[0G[?25l[+] Running 0/1
+ [33m⠹[0m Network cicd_snipeit_default  Creating                                                                                                      [34m0.3s [0m
+[?25h[1A[1A[0G[?25l[34m[+] Running 1/1[0m
+ [32m✔[0m Network cicd_snipeit_default  [32mCreated[0m                                                                                                       [34m0.3s [0m
+[?25h[1A[1A[0G[?25l[+] Running 2/2
+ [32m✔[0m Network cicd_snipeit_default    [32mCreated[0m                                                                                                     [34m0.3s [0m
+ [32m✔[0m Volume cicd_snipeit_mysql_data  [32mCreated[0m                                                                                                     [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/4[0m
+ [32m✔[0m Network cicd_snipeit_default    [32mCreated[0m                                                                                                     [34m0.3s [0m
+ [32m✔[0m Volume cicd_snipeit_mysql_data  [32mCreated[0m                                                                                                     [34m0.1s [0m
+ [33m⠋[0m Container snipeit-redis         Creating                                                                                                    [34m0.1s [0m
+ [33m⠋[0m Container snipeit-mysql         Creating                                                                                                    [34m0.1s [0m
+[?25h[1A[1A[1A[1A[1A[0G[?25l[+] Running 2/4
+ [32m✔[0m Network cicd_snipeit_default    [32mCreated[0m                                                                                                     [34m0.3s [0m
+ [32m✔[0m Volume cicd_snipeit_mysql_data  [32mCreated[0m                                                                                                     [34m0.1s [0m
+ [33m⠙[0m Container snipeit-redis         Creating                                                                                                    [34m0.2s [0m
+ [33m⠙[0m Container snipeit-mysql         Creating                                                                                                    [34m0.2s [0m
+[?25h[1A[1A[1A[1A[1A[0G[?25l[+] Running 2/4
+ [32m✔[0m Network cicd_snipeit_default    [32mCreated[0m                                                                                                     [34m0.3s [0m
+ [32m✔[0m Volume cicd_snipeit_mysql_data  [32mCreated[0m                                                                                                     [34m0.1s [0m
+ [33m⠹[0m Container snipeit-redis         Creating                                                                                                    [34m0.3s [0m
+ [33m⠹[0m Container snipeit-mysql         Creating                                                                                                    [34m0.3s [0m
+[?25h[1A[1A[1A[1A[1A[0G[?25l[+] Running 2/4
+ [32m✔[0m Network cicd_snipeit_default    [32mCreated[0m                                                                                                     [34m0.3s [0m
+ [32m✔[0m Volume cicd_snipeit_mysql_data  [32mCreated[0m                                                                                                     [34m0.1s [0m
+ [33m⠸[0m Container snipeit-redis         Creating                                                                                                    [34m0.4s [0m
+ [33m⠸[0m Container snipeit-mysql         Creating                                                                                                    [34m0.4s [0m
+[?25h[1A[1A[1A[1A[1A[0G[?25l[+] Running 2/4
+ [32m✔[0m Network cicd_snipeit_default    [32mCreated[0m                                                                                                     [34m0.3s [0m
+ [32m✔[0m Volume cicd_snipeit_mysql_data  [32mCreated[0m                                                                                                     [34m0.1s [0m
+ [33m⠼[0m Container snipeit-redis         Creating                                                                                                    [34m0.5s [0m
+ [33m⠼[0m Container snipeit-mysql         Creating                                                                                                    [34m0.5s [0m
+[?25h[1A[1A[1A[1A[1A[0G[?25l[+] Running 3/4
+ [32m✔[0m Network cicd_snipeit_default    [32mCreated[0m                                                                                                     [34m0.3s [0m
+ [32m✔[0m Volume cicd_snipeit_mysql_data  [32mCreated[0m                                                                                                     [34m0.1s [0m
+ [33m⠴[0m Container snipeit-redis         Creating                                                                                                    [34m0.5s [0m
+ [31m[1m✘[0m Container snipeit-mysql         [31m[1mError response from daemon: Conflict. The container name "/snipeit-mysql" is a...[0m                           [34m0.5s [0m
+[?25hError response from daemon: Conflict. The container name "/snipeit-mysql" is already in use by container "dad2c95e1f250fe41479c6ae2234a0209e2a995bf9d7a885b472fd886845767f". You have to remove (or rename) that container to be able to reuse that name.
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mdocker stop snipeit-mysql snipeit-redis snipeit-app || true[27m
+[7mdocker rm snipeit-mysql snipeit-redis snipeit-app || true[27m
+[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdocker stop snipeit-mysql snipeit-redis snipeit-app || true
+docker rm snipeit-mysql snipeit-redis snipeit-app || true
+[A
+[?2004lsnipeit-mysql
+snipeit-redis
+snipeit-app
+snipeit-mysql
+snipeit-redis
+snipeit-app
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mdocker ps -a | grep snipeit[27mdocker ps -a | grep snipeit
+[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mdocker-compose up -d[27mdocker-compose up -d
+[?2004l[33mWARN[0m[0000] /home/babu/docker/100226/CICD_snipeit/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+[1A[1B[0G[?25l[+] Running 0/2
+ [33m⠋[0m Container snipeit-redis  Creating                                                                                                           [34m0.1s [0m
+ [33m⠋[0m Container snipeit-mysql  Creating                                                                                                           [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 0/2
+ [33m⠙[0m Container snipeit-redis  Creating                                                                                                           [34m0.2s [0m
+ [33m⠙[0m Container snipeit-mysql  Creating                                                                                                           [34m0.2s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 0/2
+ [33m⠹[0m Container snipeit-redis  Creating                                                                                                           [34m0.3s [0m
+ [33m⠹[0m Container snipeit-mysql  Creating                                                                                                           [34m0.3s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 0/2
+ [33m⠸[0m Container snipeit-redis  Creating                                                                                                           [34m0.4s [0m
+ [33m⠸[0m Container snipeit-mysql  Creating                                                                                                           [34m0.4s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 0/2
+ [33m⠼[0m Container snipeit-redis  Creating                                                                                                           [34m0.5s [0m
+ [33m⠼[0m Container snipeit-mysql  Creating                                                                                                           [34m0.5s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Container snipeit-redis  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [33m⠴[0m Container snipeit-mysql  Creating                                                                                                           [34m0.6s [0m
+[?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/3[0m
+ [32m✔[0m Container snipeit-redis  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [32m✔[0m Container snipeit-mysql  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [33m⠋[0m Container snipeit-app    Creating                                                                                                           [34m0.1s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 2/3
+ [32m✔[0m Container snipeit-redis  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [32m✔[0m Container snipeit-mysql  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [33m⠙[0m Container snipeit-app    Creating                                                                                                           [34m0.2s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 2/3
+ [32m✔[0m Container snipeit-redis  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [32m✔[0m Container snipeit-mysql  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [33m⠹[0m Container snipeit-app    Creating                                                                                                           [34m0.3s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 2/3
+ [32m✔[0m Container snipeit-redis  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [32m✔[0m Container snipeit-mysql  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [33m⠸[0m Container snipeit-app    Creating                                                                                                           [34m0.4s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 2/3
+ [32m✔[0m Container snipeit-redis  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [32m✔[0m Container snipeit-mysql  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [33m⠼[0m Container snipeit-app    Creating                                                                                                           [34m0.5s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 2/3
+ [32m✔[0m Container snipeit-redis  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [32m✔[0m Container snipeit-mysql  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [33m⠴[0m Container snipeit-app    Creating                                                                                                           [34m0.6s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[34m[+] Running 3/3[0m
+ [32m✔[0m Container snipeit-redis  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [32m✔[0m Container snipeit-mysql  [32mCreated[0m                                                                                                            [34m0.6s [0m
+ [32m✔[0m Container snipeit-app    [32mCreated[0m                                                                                                            [34m0.6s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 1/3
+ [33m⠴[0m Container snipeit-redis  Starting                                                                                                           [34m1.4s [0m
+ [33m⠦[0m Container snipeit-mysql  Starting                                                                                                           [34m1.4s [0m
+ [32m✔[0m Container snipeit-app    [32mCreated[0m                                                                                                            [34m0.6s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 1/3
+ [33m⠦[0m Container snipeit-redis  Starting                                                                                                           [34m1.5s [0m
+ [33m⠧[0m Container snipeit-mysql  Starting                                                                                                           [34m1.5s [0m
+ [32m✔[0m Container snipeit-app    [32mCreated[0m                                                                                                            [34m0.6s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 1/3
+ [33m⠧[0m Container snipeit-redis  Starting                                                                                                           [34m1.6s [0m
+ [33m⠇[0m Container snipeit-mysql  Starting                                                                                                           [34m1.6s [0m
+ [32m✔[0m Container snipeit-app    [32mCreated[0m                                                                                                            [34m0.6s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 1/3
+ [33m⠇[0m Container snipeit-redis  Starting                                                                                                           [34m1.7s [0m
+ [33m⠏[0m Container snipeit-mysql  Starting                                                                                                           [34m1.7s [0m
+ [32m✔[0m Container snipeit-app    [32mCreated[0m                                                                                                            [34m0.6s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 1/3
+ [33m⠏[0m Container snipeit-redis  Starting                                                                                                           [34m1.8s [0m
+ [33m⠋[0m Container snipeit-mysql  Starting                                                                                                           [34m1.8s [0m
+ [32m✔[0m Container snipeit-app    [32mCreated[0m                                                                                                            [34m0.6s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 1/3
+ [33m⠋[0m Container snipeit-redis  Starting                                                                                                           [34m1.9s [0m
+ [33m⠙[0m Container snipeit-mysql  Starting                                                                                                           [34m1.9s [0m
+ [32m✔[0m Container snipeit-app    [32mCreated[0m                                                                                                            [34m0.6s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 1/3
+ [33m⠙[0m Container snipeit-redis  Starting                                                                                                           [34m2.0s [0m
+ [33m⠹[0m Container snipeit-mysql  Starting                                                                                                           [34m2.0s [0m
+ [32m✔[0m Container snipeit-app    [32mCreated[0m                                                                                                            [34m0.6s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 1/3
+ [33m⠹[0m Container snipeit-redis  Starting                                                                                                           [34m2.1s [0m
+ [33m⠸[0m Container snipeit-mysql  Starting                                                                                                           [34m2.1s [0m
+ [32m✔[0m Container snipeit-app    [32mCreated[0m                                                                                                            [34m0.6s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 1/3
+ [33m⠸[0m Container snipeit-redis  Starting                                                                                                           [34m2.2s [0m
+ [33m⠼[0m Container snipeit-mysql  Starting                                                                                                           [34m2.2s [0m
+ [32m✔[0m Container snipeit-app    [32mCreated[0m                                                                                                            [34m0.6s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 2/3
+ [32m✔[0m Container snipeit-redis  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [32m✔[0m Container snipeit-mysql  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [33m⠦[0m Container snipeit-app    Starting                                                                                                           [34m1.7s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 2/3
+ [32m✔[0m Container snipeit-redis  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [32m✔[0m Container snipeit-mysql  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [33m⠧[0m Container snipeit-app    Starting                                                                                                           [34m1.8s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 2/3
+ [32m✔[0m Container snipeit-redis  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [32m✔[0m Container snipeit-mysql  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [33m⠇[0m Container snipeit-app    Starting                                                                                                           [34m1.9s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 2/3
+ [32m✔[0m Container snipeit-redis  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [32m✔[0m Container snipeit-mysql  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [33m⠏[0m Container snipeit-app    Starting                                                                                                           [34m2.0s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 2/3
+ [32m✔[0m Container snipeit-redis  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [32m✔[0m Container snipeit-mysql  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [33m⠋[0m Container snipeit-app    Starting                                                                                                           [34m2.1s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 2/3
+ [32m✔[0m Container snipeit-redis  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [32m✔[0m Container snipeit-mysql  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [33m⠙[0m Container snipeit-app    Starting                                                                                                           [34m2.2s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 2/3
+ [32m✔[0m Container snipeit-redis  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [32m✔[0m Container snipeit-mysql  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [33m⠹[0m Container snipeit-app    Starting                                                                                                           [34m2.3s [0m

@@ -1,6 +1,18 @@
 version: "3.8"
 
 services:
+  app:
+    image: snipeit_cicd-app
+    container_name: snipeit-app
+    env_file:
+      - .env
+    ports:
+      - "8088:80"
+    depends_on:
+      - mysql
+      - redis
+    restart: unless-stopped
+
   mysql:
     image: mysql:5.7
     container_name: snipeit-mysql
@@ -11,27 +23,12 @@ services:
       MYSQL_PASSWORD: snipeit
     volumes:
       - mysql_data:/var/lib/mysql
-    restart: always
+    restart: unless-stopped
 
   redis:
     image: redis:alpine
     container_name: snipeit-redis
-    restart: always
-
-  app:
-    build: .
-    container_name: snipeit-app
-    ports:
-      - "8880:80"
-    depends_on:
-      - mysql
-      - redis
-    environment:
-      DB_HOST: mysql
-      DB_DATABASE: snipeit
-      DB_USERNAME: snipeit
-      DB_PASSWORD: snipeit
-    restart: always
+    restart: unless-stopped
 
 volumes:
   mysql_data:
