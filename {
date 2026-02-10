@@ -363,3 +363,264 @@ snipeit-app
  [32m✔[0m Container snipeit-redis  [32mStarted[0m                                                                                                            [34m2.3s [0m
  [32m✔[0m Container snipeit-mysql  [32mStarted[0m                                                                                                            [34m2.3s [0m
  [33m⠹[0m Container snipeit-app    Starting                                                                                                           [34m2.3s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[+] Running 2/3
+ [32m✔[0m Container snipeit-redis  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [32m✔[0m Container snipeit-mysql  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [33m⠸[0m Container snipeit-app    Starting                                                                                                           [34m2.4s [0m
+[?25h[1A[1A[1A[1A[0G[?25l[34m[+] Running 3/3[0m
+ [32m✔[0m Container snipeit-redis  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [32m✔[0m Container snipeit-mysql  [32mStarted[0m                                                                                                            [34m2.3s [0m
+ [32m✔[0m Container snipeit-app    [32mStarted[0m                                                                                                            [34m2.4s [0m
+[?25h[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mdocker ps[27mdocker ps
+[?2004lCONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS         PORTS                                           NAMES
+b2a09da5a34a   snipeit_cicd-app    "/startup.sh"            9 seconds ago    Up 7 seconds   0.0.0.0:8088->80/tcp, [::]:8088->80/tcp         snipeit-app
+ce53b2e43c89   redis:alpine        "docker-entrypoint.s…"   10 seconds ago   Up 8 seconds   6379/tcp                                        snipeit-redis
+8388dd96525c   mysql:5.7           "docker-entrypoint.s…"   10 seconds ago   Up 8 seconds   3306/tcp, 33060/tcp                             snipeit-mysql
+5ac0ca22e1b7   electro-web:1       "/docker-entrypoint.…"   18 hours ago     Up 18 hours    0.0.0.0:10000->9999/tcp, [::]:10000->9999/tcp   electro_container
+46db0fa29b29   bhuvanaweb:latest   "/docker-entrypoint.…"   18 hours ago     Up 18 hours    0.0.0.0:9999->80/tcp, [::]:9999->80/tcp         bhuvanaweb_container
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git add .
+[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git commit -m ""p"o"r"t" "n"o" "f"i"x"e"d"
+[?2004l[main bf6dd235e] port no fixed
+ 3 files changed, 435 insertions(+), 77 deletions(-)
+ rewrite Jenkinsfile (68%)
+ create mode 100644 {
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git push -u origin main
+[?2004lUsername for 'https://github.com': babu120987
+Password for 'https://babu120987@github.com': 
+Enumerating objects: 8, done.
+Counting objects:  12% (1/8)Counting objects:  25% (2/8)Counting objects:  37% (3/8)Counting objects:  50% (4/8)Counting objects:  62% (5/8)Counting objects:  75% (6/8)Counting objects:  87% (7/8)Counting objects: 100% (8/8)Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects:  20% (1/5)Compressing objects:  40% (2/5)Compressing objects:  60% (3/5)Compressing objects:  80% (4/5)Compressing objects: 100% (5/5)Compressing objects: 100% (5/5), done.
+Writing objects:  20% (1/5)Writing objects:  40% (2/5)Writing objects:  60% (3/5)Writing objects:  80% (4/5)Writing objects: 100% (5/5)Writing objects: 100% (5/5), 6.70 KiB | 1.67 MiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To https://github.com/babu120987/CICD_snipeit.git
+   af27fd0ca..bf6dd235e  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ nano Dockerfile
+[?2004l[?2004h[?1049h[22;0;0t[1;35r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[33;68H(B[0;7m[ Reading... ](B[m[33;66H(B[0;7m[ Read 138 lines ](B[m[H(B[0;7m  GNU nano 6.2                                                         Dockerfile                                                                   [1;147H(B[m[34d(B[0;7m^G(B[m Help[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[34;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35d(B[0;7m^X(B[m Exit[35;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[35;113H(B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[2dFROM ubuntu:24.04[3dLABEL maintainer="Brady Wetherington [35m<bwetherington@grokability.com>[39m(B[m"[5d[36m# No need to add `apt-get clean` here, reference:[6d# - https://github.com/grokability/snipe-it/pull/9201[7d# - https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#apt-get[9d[39m(B[mRUN export DEBIAN_FRONTEND=noninteractive; \[10;5Hexport DEBCONF_NONINTERACTIVE_SEEN=true; \[11;5Hecho 'tzdata tzdata/Areas select Etc' | debconf-set-selections; \[12;5Hecho 'tzdata tzdata/Zones/Etc select UTC' | debconf-set-selections; \[13;5Hapt-get update -qqy \[14d && apt-get install -qqy --no-install-recommends \[15dapt-utils \[16dapache2 \[17dapache2-bin \[18dlibapache2-mod-php8.3 \[19dphp8.3-curl \[20dphp8.3-ldap \[21dphp8.3-mysql \[22dphp8.3-gd \[23dphp8.3-xml \[24dphp8.3-mbstring \[25dphp8.3-zip \[26dphp8.3-bcmath \[27dphp8.3-redis \[28dphp-memcached \[29dpatch \[30dcurl \[31dwget  \[32dvim \[2d[?12l[?25h[?25l[33d[J[35d[?12l[?25h[35;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ nano Dockerfile[K[K[K[K[K[K[K[K[K[KJenkinsfile 
+[?2004l[?2004h[?1049h[22;0;0t[1;35r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[33;68H(B[0;7m[ Reading... ](B[m[33;66H(B[0;7m[ Read 56 lines ](B[m[H(B[0;7m  GNU nano 6.2                                                         Jenkinsfile                                                                  [1;147H(B[m[34d(B[0;7m^G(B[m Help[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[34;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35d(B[0;7m^X(B[m Exit[35;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[35;113H(B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[2dpipeline {[3;5Hagent any[5;5Henvironment {[6;9HDOCKER_IMAGE = "snipeit_app:latest"[7;9HCONTAINER_NAME = "snipeit_container"[8;9HGIT_REPO = "[94mhttps://github.com/babu120987/CICD_snipeit.git"[9;5H[39m(B[m}[11dstages {[12;9Hstage('Checkout') {[13;13Hsteps {[14;17Hgit url: "${GIT_REPO}", branch: 'main'[15;13H}[16;9H}[18dstage('Build Docker Image') {[19;13Hsteps {[20;17Hscript {[21;21Hdocker.build("${DOCKER_IMAGE}")[22;17H}[23;13H}[24;9H}[26dstage('Maven Test') {[27;13Hsteps {[28;17Hsh 'mvn clean test'[29;13H}[30;9H}[32dstage('Run Container') {[2d[?12l[?25h[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[?12l[?25h[5d[?25l[?12l[?25h[6d[?25l[?12l[?25h[7d[?25l[?12l[?25h[8d[?25l[?12l[?25h[9d[?25l[?12l[?25h[10d[?25l[?12l[?25h[11d[?25l[?12l[?25h[12d[?25l[?12l[?25h[13d[?25l[?12l[?25h[14d[?25l[?12l[?25h[15d[?25l[?12l[?25h[16d[?25l[?12l[?25h[17d[?25l[?12l[?25h[18d[?25l[1;84H(B[0;7m*[147G(B[m[18;33r[33;1H
+[1;35r[32;13Hsteps {[K[18d[?12l[?25h[?25l[18;33r[33;1H
+[1;35r[32;17Hscript {[18d[?12l[?25h[?25l[18;33r[33;1H
+[1;35r[32;21H// Stop and remove existing container if running[18d[?12l[?25h[?25l[18;33r[33;1H
+[1;35r[32;21Hsh """[18d[?12l[?25h[?25l[18;33r[33;1H
+[1;35r[32;21Hdocker stop ${CONTAINER_NAME} || true[18d[?12l[?25h[?25l[18;33r[33;1H
+[1;35r[32;21Hdocker rm ${CONTAINER_NAME} || true[18d[?12l[?25h[?25l[17;32r[17;1H[7T[1;35r[18;1Hstage('Build Docker Image') {[19;5Hsteps {[20;9Hsh '''[21;9Hdocker build -t snipeit-app:latest .[22;9H'''[23;5H}[24d}[25d[?12l[?25h[?25l[34;17H[21X[34;38H(B[0;7mM-D(B[m DOS Format   [34;65H          (B[0;7mM-A(B[m Append[20X[34;112H(B[0;7mM-B(B[m Backup File[K[35;2H(B[0;7mC(B[m Cancel[17G[21X[35;38H(B[0;7mM-M(B[m Mac Format     [35;65H          (B[0;7mM-P(B[m Prepend[19X[35;112H(B[0;7m^T(B[m Browse[K[33d(B[0;7mFile Name to Write: Jenkinsfile                                                                                                                     [33;32H(B[m[?12l[?25h[?25l[33;67H[1K (B[0;7m[ Writing... ](B[m[K[1;84H(B[0;7m [147G(B[m[33;66H(B[0;7m[ Wrote 57 lines ](B[m[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute      (B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[112G (B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35;2H(B[0;7mX(B[m Exit  [17G(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace      (B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify      (B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[112G (B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[?12l[?25h[25d[?25l[?12l[?25h[26d[?25l[?12l[?25h[27d[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[33d[K[?12l[?25h[9d[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[?12l[?25h[5d[?25l[?12l[?25h[6d[?25l[?12l[?25h[7d[?25l[?12l[?25h[8d[?25l[?12l[?25h[A[?25l[?12l[?25h[8d[?25l[?12l[?25h[9d[?25l[?12l[?25h[10d[?25l[?12l[?25h[11d[?25l[?12l[?25h[12d[?25l[?12l[?25h[13d[?25l[?12l[?25h[14d[?25l[?12l[?25h[15d[?25l[?12l[?25h[16d[?25l[?12l[?25h[17d[?25l[?12l[?25h[A[?25l[?12l[?25h[17d[?25l[?12l[?25h[18d[?25l[?12l[?25h[19d[?25l[?12l[?25h[20d[?25l[?12l[?25h[21d[?25l[?12l[?25h[22d[?25l[?12l[?25h[23d[?25l[?12l[?25h[24d[?25l[?12l[?25h[25d[?25l[?12l[?25h[26d[?25l[?12l[?25h[27d[?25l[?12l[?25h[28d[?25l[?12l[?25h[29d[?25l[?12l[?25h[30d[?25l[?12l[?25h[31d[?25l[?12l[?25h[A[?25l[?12l[?25h[31d[?25l[?12l[?25h[32d[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;9Hstage('Run Container') {[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;13Hsteps {[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;17Hscript {[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;21H// Stop and remove existing container if running[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;21Hsh """[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;21Hdocker stop ${CONTAINER_NAME} || true[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;21Hdocker rm ${CONTAINER_NAME} || true[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;21H"""[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;1H[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;21H// Run container[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;21Hsh """[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;21Hdocker run -d --name ${CONTAINER_NAME} -p 8080:80 ${DOCKER_IMAGE}[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;21H"""[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;17H}[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;13H}[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;9H}[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;5H}[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;1H[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;5Hpost {[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;9Halways {[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;13Hecho 'Cleaning up workspace...'[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;13HcleanWs()[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;9H}[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;5H}[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;1H}[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;1H[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;1H[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h7[2;33r8M[1;35r[2;13Hsteps {[?25l[?12l[?25h7[2;33r8M[1;35r[2;9Hstage('Maven Test') {[?25l[?12l[?25h7[2;32r8M[1;35r[2;1H[?25l[?12l[?25h7[2;32r8M[1;35r[2;9H}[?25l[?12l[?25h7[2;32r8M[1;35r[2;1H}[?25l[?12l[?25h7[2;32r8M[1;35r[2;5H}[?25l[?12l[?25h7[2;32r8M[1;35r[2;9H'''[?25l[?12l[?25h7[2;32r8M[1;35r[2;9Hdocker build -t snipeit-app:latest .[?25l[?12l[?25h7[2;32r8M[1;35r[2;9Hsh '''[?25l[?12l[?25h7[2;33r8M[1;35r[2;5Hsteps {[?25l[?12l[?25h7[2;32r8M[1;35r[2;1Hstage('Build Docker Image') {[?25l[?12l[?25h7[2;32r8M[1;35r[2;1H[?25l[?12l[?25h7[2;32r8M[1;35r[2;9H}[?25l[?12l[?25h7[2;32r8M[1;35r[2;13H}[?25l[?12l[?25h7[2;32r8M[1;35r[2;17Hgit url: "${GIT_REPO}", branch: 'main'[?25l[?12l[?25h7[2;32r8M[1;35r[2;13Hsteps {[?25l[?12l[?25h7[2;32r8M[1;35r[2;9Hstage('Checkout') {[?25l[?12l[?25h7[2;32r8M[1;35r[2;5Hstages {[?25l[?12l[?25h7[2;33r8M[1;35r[2;1H[?25l[?12l[?25h7[2;32r8M[1;35r[2;5H}[?25l[?12l[?25h7[2;32r8M[1;35r[2;9HGIT_REPO = "[94mhttps://github.com/babu120987/CICD_snipeit.git"[39m(B[m[?25l[?12l[?25h7[2;32r8M[1;35r[2;9HCONTAINER_NAME = "snipeit_container"[?25l[?12l[?25h7[2;32r8M[1;35r[2;9HDOCKER_IMAGE = "snipeit_app:latest"[?25l[?12l[?25h7[2;32r8M[1;35r[2;5Henvironment {[?25l[?12l[?25h7[2;32r8M[1;35r[2;1H[?25l[?12l[?25h7[2;32r8M[1;35r[2;5Hagent any[?25l[?12l[?25h7[2;32r8M[1;35r[2;1Hpipeline {[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[34;17H[21X[34;38H(B[0;7mM-D(B[m DOS Format   [34;65H          (B[0;7mM-A(B[m Append[20X[34;112H(B[0;7mM-B(B[m Backup File[K[35;2H(B[0;7mC(B[m Cancel[17G[21X[35;38H(B[0;7mM-M(B[m Mac Format     [35;65H          (B[0;7mM-P(B[m Prepend[19X[35;112H(B[0;7m^T(B[m Browse[K[33d(B[0;7mFile Name to Write: Jenkinsfile                                                                                                                     [33;32H(B[m[?12l[?25h[?25l[33;67H[1K (B[0;7m[ Writing... ](B[m[K[1;147H[33;66H(B[0;7m[ Wrote 57 lines ](B[m[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute      (B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[112G (B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35;2H(B[0;7mX(B[m Exit  [17G(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace      (B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify      (B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[112G (B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[?12l[?25h[2d[?25l[33d[J[35d[?12l[?25h[35;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git add Jenkinsfile 
+[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ d[Ksit [K[K[K[Kgit commit -m ""j"e"n"k"i"n"s" "e"[1P"f"i"l"e" "u"p"d"a"t"e"d"
+[?2004l[main 81acffeb7] jenkins file updated
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git pi[Kush -u origin main
+[?2004lUsername for 'https://github.com': babu120987
+Password for 'https://babu120987@github.com': 
+Enumerating objects: 5, done.
+Counting objects:  20% (1/5)Counting objects:  40% (2/5)Counting objects:  60% (3/5)Counting objects:  80% (4/5)Counting objects: 100% (5/5)Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects:  33% (1/3)Compressing objects:  66% (2/3)Compressing objects: 100% (3/3)Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)Writing objects:  66% (2/3)Writing objects: 100% (3/3)Writing objects: 100% (3/3), 362 bytes | 362.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To https://github.com/babu120987/CICD_snipeit.git
+   bf6dd235e..81acffeb7  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git push -u origin maincommit -m "jenkins file updated"[16Padd Jenkinsfile [3Pnano[C[C[C[C[C[C[C[C[C[C[C[C[C[3@git add[C[C[C[C[C[C[C[C[C[C[C[C[C[3Pnano[C[C[C[C[C[C[C[C[C[C[C[C[C[2PDockerfileJenkinsfile 
+[?2004l[?2004h[?1049h[22;0;0t[1;35r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[33;68H(B[0;7m[ Reading... ](B[m[33;66H(B[0;7m[ Read 57 lines ](B[m[H(B[0;7m  GNU nano 6.2                                                         Jenkinsfile                                                                  [1;147H(B[m[34d(B[0;7m^G(B[m Help[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[34;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35d(B[0;7m^X(B[m Exit[35;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[35;113H(B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[2dpipeline {[3;5Hagent any[5;5Henvironment {[6;9HDOCKER_IMAGE = "snipeit_app:latest"[7;9HCONTAINER_NAME = "snipeit_container"[8;9HGIT_REPO = "[94mhttps://github.com/babu120987/CICD_snipeit.git"[9;5H[39m(B[m}[11dstages {[12;9Hstage('Checkout') {[13;13Hsteps {[14;17Hgit url: "${GIT_REPO}", branch: 'main'[15;13H}[16;9H}[18dstage('Build Docker Image') {[19;5Hsteps {[20;9Hsh '''[21;9Hdocker build -t snipeit-app:latest .[22;9H'''[23;5H}[24d}[25;9H}[27dstage('Maven Test') {[28;13Hsteps {[29;17Hsh 'mvn clean test'[30;13H}[31;9H}[2d[?12l[?25h[?25l[1;84H(B[0;7m*[147G(B[m[2;33r[33;1H
+[1;35r[32;9Hstage('Run Container') {[K[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;13Hsteps {[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;17Hscript {[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;21H// Stop and remove existing container if running[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;21Hsh """[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;21Hdocker stop ${CONTAINER_NAME} || true[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;21Hdocker rm ${CONTAINER_NAME} || true[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;21H"""[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;21H// Run container[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;21Hsh """[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;21Hdocker run -d --name ${CONTAINER_NAME} -p 8080:80 ${DOCKER_IMAGE}[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;21H"""[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;17H}[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;13H}[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;9H}[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;5H}[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;5Hpost {[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;9Halways {[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;13Hecho 'Cleaning up workspace...'[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;13HcleanWs()[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;9H}[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;5H}[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[32;1H}[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[K[?12l[?25h[?25l[?12l[?25h[?25l[33;65H(B[0;7m[ Nothing was cut ](B[m[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[?12l[?25h[?25l[33d[K[2;9H}[3;5H}[5dpost {[6dalways {[7;13HcleanWs()[8;9H}[9dsuccess {[10;13Hecho "✅ Snipe-IT deployed successfully on port 8088"[11;9H}[12dfailure {[13;13Hecho "❌ Pipeline failed — check logs"[14;9H}[15;5H}[16d}[17d[?12l[?25h[?25l[34;17H[21X[34;38H(B[0;7mM-D(B[m DOS Format   [34;65H          (B[0;7mM-A(B[m Append[20X[34;112H(B[0;7mM-B(B[m Backup File[K[35;2H(B[0;7mC(B[m Cancel[17G[21X[35;38H(B[0;7mM-M(B[m Mac Format     [35;65H          (B[0;7mM-P(B[m Prepend[19X[35;112H(B[0;7m^T(B[m Browse[K[33d(B[0;7mFile Name to Write: Jenkinsfile                                                                                                                     [33;32H(B[m[?12l[?25h[?25l[33;67H[1K (B[0;7m[ Writing... ](B[m[K[1;84H(B[0;7m [147G(B[m[33;66H(B[0;7m[ Wrote 50 lines ](B[m[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute      (B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[112G (B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35;2H(B[0;7mX(B[m Exit  [17G(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace      (B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify      (B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[112G (B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[?12l[?25h[17d[?25l[33d[J[35d[?12l[?25h[35;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git add J[KJenkinsfile 
+[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git commit -m ""r"e"l"a"p"c"e"d" "J"e"n"k"i"n" "f"l"e"
+[?2004l[main e60d0358b] relapced Jenkin fle
+ 1 file changed, 50 insertions(+), 57 deletions(-)
+ rewrite Jenkinsfile (76%)
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git pi[Kush -u oringin main
+[?2004lfatal: 'oringin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git push -u oringin main
+[?2004lfatal: 'oringin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git push -u oringin main[K[K[K[K[K[K[K[K[K[Kgi[K[Kign main
+[?2004lfatal: 'orign' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git push -u orign main[K[K[K[K[K[Kin  ai n[K[K[K[Kmain
+[?2004lUsername for 'https://github.com': babu120987
+Password for 'https://babu120987@github.com': 
+Enumerating objects: 5, done.
+Counting objects:  20% (1/5)Counting objects:  40% (2/5)Counting objects:  60% (3/5)Counting objects:  80% (4/5)Counting objects: 100% (5/5)Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects:  33% (1/3)Compressing objects:  66% (2/3)Compressing objects: 100% (3/3)Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)Writing objects:  66% (2/3)Writing objects: 100% (3/3)Writing objects: 100% (3/3), 595 bytes | 595.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To https://github.com/babu120987/CICD_snipeit.git
+   81acffeb7..e60d0358b  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mCOMPOSER_CACHE_DIR=/dev/null composer install --no-dev[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CCOMPOSER_CACHE_DIR=/dev/null composer install --no-dev
+[?2004lCommand 'composer' not found, but can be installed with:
+sudo apt install composer
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mRUN COMPOSER_CACHE_DIR=/dev/null composer install --no-dev[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CRUN COMPOSER_CACHE_DIR=/dev/null composer install --no-dev
+[?2004lRUN: command not found
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mcomposer install --no-dev[27mcomposer install --no-dev
+[?2004lCommand 'composer' not found, but can be installed with:
+sudo apt install composer
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ nanno [K[K[Ko .env
+[?2004l[?2004h[?1049h[22;0;0t[1;35r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[33;68H(B[0;7m[ Reading... ](B[m[33;66H(B[0;7m[ Read 19 lines ](B[m[H(B[0;7m  GNU nano 6.2                                                            .env                                                                      [1;147H(B[m[34d(B[0;7m^G(B[m Help[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[34;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35d(B[0;7m^X(B[m Exit[35;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[35;113H(B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[2dAPP_ENV=production[3dAPP_DEBUG=false[4dAPP_URL=http://localhost:8088[6dAPP_KEY=base64:H9CO1TpVDGs5Hl1tXAJ29P60F+XA9c0IFRQLO3KNNcE=[8dDB_CONNECTION=mysql[9dDB_HOST=snipeit-mysql[10dDB_PORT=3306[11dDB_DATABASE=snipeit[12dDB_USERNAME=snipeit[13dDB_PASSWORD=snipeit[15dCACHE_DRIVER=redis[16dSESSION_DRIVER=redis[17dQUEUE_DRIVER=sync[19dREDIS_HOST=snipeit-redis[20dREDIS_PORT=6379[2d[?12l[?25h[?25l[1;80H(B[0;7m*[147G(B[m[2;33r[33;1H
+[1;35r[32;1H[K[2d[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[2;33r[33;1H
+[1;35r[2;1H[?12l[?25h[?25l[K[?12l[?25h[?25l[33;65H(B[0;7m[ Nothing was cut ](B[m[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33;84H[?12l[?25h[2d[?25l[33d[K[2dAPP_ENV=production[3dAPP_DEBUG=false[4dAPP_KEY=base64:GENERATE_IN_CONTAINER[6dAPP_URL=http://localhost:8088[7dAPP_TIMEZONE=Asia/Kolkata[9dDB_CONNECTION=mysql[10dDB_HOST=snipeit-mysql[11dDB_PORT=3306[12dDB_DATABASE=snipeit[13dDB_USERNAME=snipeit[14dDB_PASSWORD=snipeit[16dREDIS_HOST=snipeit-redis[17dCACHE_DRIVER=redis[18dSESSION_DRIVER=redis[19dQUEUE_DRIVER=sync[20d[?12l[?25h[?25l[34;17H[21X[34;38H(B[0;7mM-D(B[m DOS Format   [34;65H          (B[0;7mM-A(B[m Append[20X[34;112H(B[0;7mM-B(B[m Backup File[K[35;2H(B[0;7mC(B[m Cancel[17G[21X[35;38H(B[0;7mM-M(B[m Mac Format     [35;65H          (B[0;7mM-P(B[m Prepend[19X[35;112H(B[0;7m^T(B[m Browse[K[33d(B[0;7mFile Name to Write: .env                                                                                                                            [33;25H(B[m[?12l[?25h[?25l[33;67H[1K (B[0;7m[ Writing... ](B[m[K[1;80H(B[0;7m [147G(B[m[33;66H(B[0;7m[ Wrote 18 lines ](B[m[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute      (B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[112G (B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35;2H(B[0;7mX(B[m Exit  [17G(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace      (B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify      (B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[112G (B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[?12l[?25h[20d[?25l[33d[J[35d[?12l[?25h[35;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git add .
+./                          .env.dev.docker             .env.testing.example        .github/                    .upgrade_requirements.json
+../                         .env.docker                 .env.tests                  .gitignore                  
+.all-contributorsrc         .env.dusk.example           .env.unit-tests             .htaccess                   
+.dockerignore               .env.example                .git/                       .nvmrc                      
+.env                        .env.testing-ci             .gitattributes              .pa11yci.json               
+]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git add .nvmrc [K[K[K[K[K[Kenv
+[?2004lThe following paths are ignored by one of your .gitignore files:
+.env
+[33mhint: Use -f if you really want to add them.[m
+[33mhint: Turn this message off by running[m
+[33mhint: "git config advice.addIgnoredFile false"[m
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git commin[Kt -,[Km ""."e"n"b"v"\"[1P"[1P"[1P"v" "a"d"d"e"d"
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   {[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ git push -u origin main
+[?2004lUsername for 'https://github.com': babi u120987
+Password for 'https://babu120987@github.com': 
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+Everything up-to-date
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ nano [7mdocker-compose.yml[27mdocker-compose.yml
+[?2004l[?2004h[?1049h[22;0;0t[1;35r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[33;68H(B[0;7m[ Reading... ](B[m[33;66H(B[0;7m[ Read 34 lines ](B[m[H(B[0;7m  GNU nano 6.2                                                     docker-compose.yml                                                               [1;147H(B[m[34d(B[0;7m^G(B[m Help[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[34;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35d(B[0;7m^X(B[m Exit[35;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[35;113H(B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[2d[92mversion[39m: [95m"3.8"[4d[92mservices[39m:[5;3H[92mapp[39m:[6d[92mimage[39m: (B[msnipeit_cicd-app[7;5H[92mcontainer_name[39m: (B[msnipeit-app[8;5H[92menv_file[39m:[9;6H(B[0;1m[33m[1K - [39m(B[m.env[10;5H[92mports[39m:[11;6H(B[0;1m[33m[1K - (B[0m[95m"8088:80"[12;5H[92mdepends_on[39m:[13;6H(B[0;1m[33m[1K - [39m(B[mmysql[14;6H(B[0;1m[33m[1K - [39m(B[mredis[15;5H[92mrestart[39m: (B[munless-stopped[17;3H[92mmysql[39m:[18;5H[92mimage[39m: (B[mmysql:5.7[19;5H[92mcontainer_name[39m: (B[msnipeit-mysql[20;5H[92menvironment[39m:[21;7H[92mMYSQL_ROOT_PASSWORD[39m: (B[mroot[22;7H[92mMYSQL_DATABASE[39m: (B[msnipeit[23;7H[92mMYSQL_USER[39m: (B[msnipeit[24;7H[92mMYSQL_PASSWORD[39m: (B[msnipeit[25;5H[92mvolumes[39m:[26;6H(B[0;1m[33m[1K - [39m(B[mmysql_data:/var/lib/mysql[27;5H[92mrestart[39m: (B[munless-stopped[29;3H[92mredis[39m:[30;5H[92mimage[39m: (B[mredis:alpine[31;5H[92mcontainer_name[39m: (B[msnipeit-redis[32;5H[92mrestart[39m: (B[munless-stopped[2d[?12l[?25h[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[?12l[?25h[5d[?25l[?12l[?25h[6d[?25l[?12l[?25h[7d[?25l[?12l[?25h[8d[?25l[1;87H(B[0;7m*[147G(B[m[8;33r[33;1H
+[1;35r[32;1H[K[8d[?12l[?25h[?25l[8;33r[33;1H
+[1;35r[32;1H[92mvolumes[39m:[8d(B[m[?12l[?25h[?25l[33d[8;33r[8;1H[2T[1;35r[8;1H[92menv_file[39m:[9d(B[0;1m[33m  - [39m(B[mdocker/docker.env[10d[?12l[?25h[?25l[34;17H[21X[34;38H(B[0;7mM-D(B[m DOS Format   [34;65H          (B[0;7mM-A(B[m Append[20X[34;112H(B[0;7mM-B(B[m Backup File[K[35;2H(B[0;7mC(B[m Cancel[17G[21X[35;38H(B[0;7mM-M(B[m Mac Format     [35;65H          (B[0;7mM-P(B[m Prepend[19X[35;112H(B[0;7m^T(B[m Browse[K[33d(B[0;7mFile Name to Write: docker-compose.yml                                                                                                              [33;39H(B[m[?12l[?25h[?25l[33;67H[1K (B[0;7m[ Writing... ](B[m[K[1;87H(B[0;7m [147G(B[m[33;66H(B[0;7m[ Wrote 34 lines ](B[m[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute      (B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[112G (B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35;2H(B[0;7mX(B[m Exit  [17G(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace      (B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify      (B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[112G (B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[?12l[?25h[10d[?25l[33d[J[35d[?12l[?25h[35;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ [7mgit add docker-compose.yml[27m
+[7mgit commit -m "Fix env_file path for Jenkins"[27m
+[7mgit push origin main[27m
+[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit add docker-compose.yml
+git commit -m "Fix env_file path for Jenkins"
+git push origin main
+[A
+[?2004l[main 0a4508579] Fix env_file path for Jenkins
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Username for 'https://github.com': babu120987
+Password for 'https://babu120987@github.com': 
+Enumerating objects: 5, done.
+Counting objects:  20% (1/5)Counting objects:  40% (2/5)Counting objects:  60% (3/5)Counting objects:  80% (4/5)Counting objects: 100% (5/5)Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects:  33% (1/3)Compressing objects:  66% (2/3)Compressing objects: 100% (3/3)Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)Writing objects:  66% (2/3)Writing objects: 100% (3/3)Writing objects: 100% (3/3), 332 bytes | 66.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To https://github.com/babu120987/CICD_snipeit.git
+   e60d0358b..0a4508579  main -> main
+[?2004h]0;babu@Babu: ~/docker/100226/CICD_snipeit[01;32mbabu@Babu[00m:[01;34m~/docker/100226/CICD_snipeit[00m$ nano docker-compose.yml 
+[?2004l[?2004h[?1049h[22;0;0t[1;35r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[33;68H(B[0;7m[ Reading... ](B[m[33;66H(B[0;7m[ Read 34 lines ](B[m[H(B[0;7m  GNU nano 6.2                                                     docker-compose.yml                                                               [1;147H(B[m[34d(B[0;7m^G(B[m Help[34;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[34;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[34;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket[35d(B[0;7m^X(B[m Exit[35;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[35;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[35;113H(B[0;7mM-6(B[m Copy[35;129H(B[0;7m^Q(B[m Where Was[2d[92mversion[39m: [95m"3.8"[4d[92mservices[39m:[5;3H[92mapp[39m:[6d[92mimage[39m: (B[msnipeit_cicd-app[7;5H[92mcontainer_name[39m: (B[msnipeit-app[8d[92menv_file[39m:[9d(B[0;1m[33m  - [39m(B[mdocker/docker.env[10;5H[92mports[39m:[11;6H(B[0;1m[33m[1K - (B[0m[95m"8088:80"[12;5H[92mdepends_on[39m:[13;6H(B[0;1m[33m[1K - [39m(B[mmysql[14;6H(B[0;1m[33m[1K - [39m(B[mredis[15;5H[92mrestart[39m: (B[munless-stopped[17;3H[92mmysql[39m:[18;5H[92mimage[39m: (B[mmysql:5.7[19;5H[92mcontainer_name[39m: (B[msnipeit-mysql[20;5H[92menvironment[39m:[21;7H[92mMYSQL_ROOT_PASSWORD[39m: (B[mroot[22;7H[92mMYSQL_DATABASE[39m: (B[msnipeit[23;7H[92mMYSQL_USER[39m: (B[msnipeit[24;7H[92mMYSQL_PASSWORD[39m: (B[msnipeit[25;5H[92mvolumes[39m:[26;6H(B[0;1m[33m[1K - [39m(B[mmysql_data:/var/lib/mysql[27;5H[92mrestart[39m: (B[munless-stopped[29;3H[92mredis[39m:[30;5H[92mimage[39m: (B[mredis:alpine[31;5H[92mcontainer_name[39m: (B[msnipeit-redis[32;5H[92mrestart[39m: (B[munless-stopped[2d[?12l[?25h[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[?12l[?25h[5d[?25l[?12l[?25h[6d[?25l[?12l[?25h[7d[?25l[?12l[?25h[8d[?25l[?12l[?25h[9d[?25l[?12l[?25h[10d[?25l[?12l[?25h[11d[?25l[?12l[?25h[12d[?25l[?12l[?25h[13d[?25l[?12l[?25h[14d[?25l[?12l[?25h[15d[?25l[?12l[?25h[16d[?25l[?12l[?25h[17d[?25l[?12l[?25h[18d[?25l[?12l[?25h[19d[?25l[?12l[?25h[20d[?25l[?12l[?25h[21d[?25l[33d[K[?12l[?25h[22d[?25l[?12l[?25h[23d[?25l[?12l[?25h[24d[?25l[?12l[?25h[25d[?25l[?12l[?25h[26d[?25l[?12l[?25h[27d[?25l[?12l[?25h[28d[?25l[?12l[?25h[29d[?25l[?12l[?25h[30d[?25l[?12l[?25h[31d[?25l[?12l[?25h[32d[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;1H[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;1H[92mvolumes[39m:(B[m[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;3H[92mmysql_data[39m:(B[m[?25l[?12l[?25h7[2;33r8[33d
+[1;35r[32;1H[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l
