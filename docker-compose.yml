@@ -4,8 +4,8 @@ services:
   app:
     image: snipeit_cicd-app
     container_name: snipeit-app
-    env_file:
-      - .env
+env_file:
+  - docker/docker.env
     ports:
       - "8088:80"
     depends_on:
